@@ -24,13 +24,15 @@
  * Records
  */
 
-$app->get('/', function() use ($app){
+$app->get('[/]', function() use ($app){
    echo "OK";
 });
 
 $app->group('/records', function () use ($app) {
     /* Get all records */
+    $app->get('[/]', 'RecordController:get_records');
     /* Get, update or delete record by ID */
+    $app->get('/id/{record_id:[0-9]+}[/]', 'RecordController:get_record');
     /* Create or update record */
     #$app->post('[/new]', 'RecordController:post_record');
 });

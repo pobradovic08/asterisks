@@ -81,6 +81,11 @@ $container['capsule'] = function ($c) {
     return $capsule;
 };
 
+$container['RecordController'] = function ($c) {
+    return new \Asterisks\Controller\RecordController($c);
+};
+
+
 require __DIR__ . '/../routes.php';
 
 // Run application
