@@ -1,3 +1,5 @@
-vendor/
+*.swp
+logs/**
+vendor/**
+.idea/**
 *.lock
-.idea/
