@@ -85,6 +85,10 @@ $container['RecordController'] = function ($c) {
     return new \Asterisks\Controller\RecordController($c);
 };
 
+$container['GroupController'] = function ($c) {
+    return new \Asterisks\Controller\GroupController($c);
+};
+
 
 require __DIR__ . '/../routes.php';
 
