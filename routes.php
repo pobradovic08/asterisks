@@ -20,19 +20,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+$app->get('[/]', function() use ($app){
+    echo "OK";
+});
+
 /*
  * Records
  */
 
-$app->get('[/]', function() use ($app){
-   echo "OK";
-});
-
 $app->group('/records', function () use ($app) {
     /* Get all records */
     $app->get('[/]', 'RecordController:get_records');
+    /* Get all private records for user */
+    $app->get('/user/{user_id:[0-9]+}[/]', 'RecordController:get_user_records');
+    /* Get all shared records (by group) */
+    $app->get('/group/{group_id:[0-9]+}[/]', 'RecordController:get_group_records');
     /* Get, update or delete record by ID */
     $app->get('/id/{record_id:[0-9]+}[/]', 'RecordController:get_record');
     /* Create or update record */
     #$app->post('[/new]', 'RecordController:post_record');
+});
+
+/*
+ * Groups
+ */
+
+$app->group('/groups', function () use ($app) {
+    /* Get all groups */
+    $app->get('[/]', 'GroupController:get_groups');
+    /* Get, update or delete group by ID */
+    $app->get('/id/{group_id:[0-9]+}[/]', 'GroupController:get_group');
 });

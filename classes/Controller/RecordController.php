@@ -24,8 +24,18 @@ class RecordController extends BaseController {
         return $response->withStatus($this->r->getCode())->withJson($this->r);
     }
 
+    public function get_user_records (ServerRequestInterface $request, ResponseInterface $response, $args) {
+        //TODO: complete method
+        return $response->withStatus($this->r->getCode())->withJson($this->r);
+    }
+
+    public function get_group_records (ServerRequestInterface $request, ResponseInterface $response, $args) {
+        //TODO: complete method
+        return $response->withStatus($this->r->getCode())->withJson($this->r);
+    }
+
     /***
-     * Fetch a single Record for database
+     * Fetch a single Record from database
      *
      * @param ServerRequestInterface $request
      * @param ResponseInterface $response
