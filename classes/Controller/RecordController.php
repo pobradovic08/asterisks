@@ -29,6 +29,13 @@ class RecordController extends BaseController {
         return $response->withStatus($this->r->getCode())->withJson($this->r);
     }
 
+    public function get_folder_records (ServerRequestInterface $request, ResponseInterface $response, $args) {
+        $folder_id = (int) $args['folder_id'];
+        $this->r->setData($folder_id);
+        //TODO: complete method
+        return $response->withStatus($this->r->getCode())->withJson($this->r);
+    }
+
     public function get_group_records (ServerRequestInterface $request, ResponseInterface $response, $args) {
         //TODO: complete method
         return $response->withStatus($this->r->getCode())->withJson($this->r);

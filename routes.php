@@ -33,6 +33,8 @@ $app->group('/records', function () use ($app) {
     $app->get('[/]', 'RecordController:get_records');
     /* Get all private records for user */
     $app->get('/user/{user_id:[0-9]+}[/]', 'RecordController:get_user_records');
+    /* Get all records from a folder */
+    $app->get('/folder/{folder_id:[0-9]+}[/]', 'RecordController:get_folder_records');
     /* Get all shared records (by group) */
     $app->get('/group/{group_id:[0-9]+}[/]', 'RecordController:get_group_records');
     /* Get, update or delete record by ID */
