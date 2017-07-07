@@ -89,6 +89,9 @@ $container['GroupController'] = function ($c) {
     return new \Asterisks\Controller\GroupController($c);
 };
 
+$container['FolderController'] = function ($c) {
+    return new \Asterisks\Controller\FolderController($c);
+};
 
 require __DIR__ . '/../routes.php';
 

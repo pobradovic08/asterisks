@@ -51,3 +51,13 @@ $app->group('/groups', function () use ($app) {
     /* Get, update or delete group by ID */
     $app->get('/id/{group_id:[0-9]+}[/]', 'GroupController:get_group');
 });
+
+/*
+ * Folders
+ */
+$app->group('/folders', function () use ($app) {
+    /* Get all groups */
+    $app->get('[/]', 'FolderController:get_folders');
+    /* Get, update or delete group by ID */
+    $app->get('/id/{folder_id:[0-9]+}[/]', 'FolderController:get_folder');
+});
