@@ -93,6 +93,10 @@ $container['FolderController'] = function ($c) {
     return new \Asterisks\Controller\FolderController($c);
 };
 
+$container['UserController'] = function ($c) {
+    return new \Asterisks\Controller\UserController($c);
+};
+
 require __DIR__ . '/../routes.php';
 
 // Run application
